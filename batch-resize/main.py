@@ -33,7 +33,7 @@ def resize(image_name, source_folder, dest_folder, k=None, width=None, height=No
     print("image_name={0} source_folder={1} dest_folder={2} width={3} height={4}".format(image_name, source_folder, dest_folder, width, height))
     
     if k is None:
-        result_image = cv2.resize(image, (width, height), interpolation=cv2.INTER_CUBIC)
+        result_image = cv2.resize(image, (int(width), int(height)), interpolation=cv2.INTER_CUBIC)
     else:
         result_image = cv2.resize(image, None, fx=k, fy=k, interpolation=cv2.INTER_CUBIC)
     if ext is None:
